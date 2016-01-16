@@ -1,0 +1,9 @@
+<h1>Log in</h1>
+
+<%= form_tag login_path, method: :post do %>
+  <p><%= label_tag 'session_name', 'User name' %></p>
+  <p><%= text_field_tag 'session[name]' %></p>
+  <p><%= label_tag 'session_password', 'Password' %></p>
+  <p><%= password_field_tag 'session[password]' %></p>
+  <p><%= submit_tag 'Log in' %></p>
+<% end %>

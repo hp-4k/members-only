@@ -1,3 +1,7 @@
 <h1>members-only</h1>
 
+<% if current_user %>
+  <p>You are logged in as <%= current_user.name %>. <%= link_to 'Log out', logout_path, method: :delete %></p>
+<% end %>
+
 <%= link_to 'Log in', login_path %>
