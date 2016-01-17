@@ -1,0 +1,7 @@
+<h1>Conversation history</h1>
+<% if current_user %>
+  <p>You are logged in as <%= current_user.name %>. <%= link_to 'Log out', logout_path, method: :delete %></p>
+<% end %>
+<p>Only logged in users can see authors' names. <%= current_user ? nil : link_to("Sign in", login_path) %></p>
+
+<%= render @posts %>

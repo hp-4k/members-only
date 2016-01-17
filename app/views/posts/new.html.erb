@@ -1,0 +1,16 @@
+<h1>Write a new post</h1>
+
+<% if @post.errors.any? %>
+  <p>Errors!</p>
+  <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<p>You are writing as <%= current_user.name %></p>
+<%= form_for @post do |f| %>
+  <p><%= f.text_area :body, cols: 40, rows: 20 %></p>
+  <p><%= f.submit %></p>
+<% end %>
