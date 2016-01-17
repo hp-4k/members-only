@@ -1,6 +1,5 @@
 require 'rails_helper'
 
 RSpec.describe StaticPagesController, type: :controller do
-  def home
-  end
+  it { is_expected.to route(:get, '/').to(action: :home) }
 end
